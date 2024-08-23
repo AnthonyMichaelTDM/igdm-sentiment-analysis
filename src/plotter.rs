@@ -129,11 +129,11 @@ impl AnalyzedConversation {
                 chart.draw_series(DashedLineSeries::new(
                     smoothen_wrt_time(
                         scores,
-                        TimeDelta::milliseconds((max_time as i64 - min_time as i64) / 120),
+                        TimeDelta::milliseconds((max_time as i64 - min_time as i64) / 100),
                         // TimeDelta::days(3),
                     ),
                     6,
-                    3,
+                    2,
                     color.stroke_width(2),
                 ))?;
             }
