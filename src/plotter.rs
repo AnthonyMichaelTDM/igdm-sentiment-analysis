@@ -10,7 +10,7 @@ use crate::{
 };
 
 const SHOW_SMOOTHED: bool = true;
-const SHOW_LSQR: bool = true;
+const SHOW_LSQR: bool = false;
 const REMOVE_OUTLIERS: bool = true;
 
 #[derive(Debug, Default, Clone, Copy)]
@@ -123,7 +123,7 @@ impl AnalyzedConversation {
             for (i, (_, scores)) in data.iter().enumerate() {
                 // pick a color from the palette, and use it for the line
                 let mut color = Palette99::pick(i).to_rgba();
-                color.3 = 0.8; // set the alpha channel to 0.8 to make the line more visible
+                color.3 = 0.9; // set the alpha channel to 0.8 to make the line more visible
 
                 // draw the smoothed line
                 chart.draw_series(DashedLineSeries::new(
